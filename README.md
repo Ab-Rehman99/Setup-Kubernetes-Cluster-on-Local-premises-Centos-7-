@@ -172,9 +172,17 @@ This step should be perform on all nodes.
 
 ```bash 
   cat <<EOF > /etc/sysctl.d/k8s.conf
+```
+```bash 
   net.bridge.bridge-nf-call-ip6tables = 1
+```
+```bash 
   net.bridge.bridge-nf-call-iptables = 1
+```
+```bash 
   EOF
+```
+```bash 
   sudo sysctl --system
 ```
 # Step 9. Disable swap
