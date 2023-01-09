@@ -210,9 +210,17 @@ You might face errors related "Preflight". First, warning like if you have not a
 
 ```bash
   cat > /etc/containerd/config.toml <<EOF
+```
+```bash
   [plugins."io.containerd.grpc.v1.cri"]
+```
+```bash
   systemd_cgroup = true
+```
+```bash
   EOF
+```
+```bash
   systemctl restart containerd
 ```
 
@@ -240,11 +248,11 @@ As you can see, the status of master–node is 'NotReady'.
 ```bash 
   sudo export kubever=$(kubectl version --short | base64 | tr -d '\n')
 ```
-(Ignore the warning, same wese jese tumhe duniya ignore krti hai.)
+(Ignore the warning and Error, same wese jese tumhe duniya ignore krti hai.)
 
 
 ```bash
-  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 If you see a lot of 'created' outputs then it's a good sign.
 
